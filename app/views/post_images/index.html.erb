@@ -25,7 +25,8 @@
                     <%= post_image.user.name %>
                   </li>
                   <li>
-                    <a href="#">23 コメント</a>
+                    <!-- コメント件数の表示 -->
+                    <%= link_to "#{post_image.post_comments.count} コメント", post_image_path(post_image.id) %>
                   </li>
                 </ul>
               </div>
@@ -35,6 +36,7 @@
           <%= attachment_image_tag post_image, :image %>
           <% end %>
           <% end %>
+          <%= paginate @post_images, class: "paginate" %>
         </div>
       </div>
     </div>
