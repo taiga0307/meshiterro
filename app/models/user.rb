@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :post_comments, dependent: :destroy
   # Userのデータが削除されたとき、そのUserが投稿したコメントデータも一緒に削除される
   has_many :favorites, dependent: :destroy
+  attachment :profile_image
 end
